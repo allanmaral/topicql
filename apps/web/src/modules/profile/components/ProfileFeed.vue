@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Topic } from "@/lib/domain";
-import TopicList from "@/components/TopicList.vue";
+import { Topic } from '@/lib/domain';
+import TopicList from '@/components/TopicList.vue';
 
 defineProps<{ topics: Topic[] }>();
 </script>

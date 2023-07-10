@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { RouterLink } from "vue-router";
+import { computed } from 'vue';
+import { RouterLink } from 'vue-router';
 
-import { UserAvatar } from "@/lib/domain";
-import AvatarImage from "./AvatarImage.vue";
+import { UserAvatar } from '@/lib/domain';
+import AvatarImage from './AvatarImage.vue';
 
 const props = withDefaults(
   defineProps<{ user: UserAvatar; interactive?: boolean }>(),
@@ -12,7 +12,7 @@ const props = withDefaults(
   }
 );
 
-const wrapper = computed(() => (props.interactive ? RouterLink : "span"));
+const wrapper = computed(() => (props.interactive ? RouterLink : 'span'));
 const profileUrl = computed(() => `/profile/${props.user.id}`);
 
 function handleClick(event: MouseEvent) {

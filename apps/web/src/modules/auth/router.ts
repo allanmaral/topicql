@@ -1,18 +1,18 @@
-import { RouteRecordRaw, Router } from "vue-router";
+import { RouteRecordRaw, Router } from 'vue-router';
 
-const Module = () => import("./AuthModule.vue");
-const Login = () => import("./pages/LoginPage.vue");
+const Module = () => import('./AuthModule.vue');
+const Login = () => import('./pages/LoginPage.vue');
 
 const moduleRoute: RouteRecordRaw = {
-  path: "/auth",
+  path: '/auth',
   component: Module,
   children: [
     {
-      path: "",
+      path: '',
       component: Login,
     },
     {
-      path: ":id",
+      path: ':id',
       component: Login,
     },
   ],

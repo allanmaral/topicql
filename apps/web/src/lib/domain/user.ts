@@ -12,7 +12,7 @@ export interface UserAvatar {
   avatarUrl: string;
 }
 
-const USER_KEY = "user";
+const USER_KEY = 'user';
 
 export function getCurrentUser(): User {
   const userData = localStorage.getItem(USER_KEY) ?? '{ "id": 1 }';

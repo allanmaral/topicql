@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Topic } from "@/lib/domain";
+import { Topic } from '@/lib/domain';
 
 defineProps<{ topic: Topic }>();
 </script>
@@ -7,6 +7,6 @@ defineProps<{ topic: Topic }>();
 <template>
   <div class="text-muted">
     {{ topic.replies.length }}
-    {{ topic.replies.length !== 1 ? "respostas" : "resposta" }}
+    {{ topic.replies.length !== 1 ? 'respostas' : 'resposta' }}
   </div>
 </template>

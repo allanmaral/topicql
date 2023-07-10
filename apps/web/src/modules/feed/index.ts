@@ -1,4 +1,4 @@
-import { routes } from "./router";
+import { routes } from './router';
 
 export const FeedModule = {
   routes,

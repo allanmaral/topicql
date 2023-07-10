@@ -1,19 +1,19 @@
-import { RouteRecordRaw } from "vue-router";
+import { RouteRecordRaw } from 'vue-router';
 
-const Module = () => import("./FeedModule.vue");
-const Feed = () => import("./pages/FeedPage.vue");
-const Topic = () => import("./pages/TopicPage.vue");
+const Module = () => import('./FeedModule.vue');
+const Feed = () => import('./pages/FeedPage.vue');
+const Topic = () => import('./pages/TopicPage.vue');
 
 const moduleRoute: RouteRecordRaw = {
-  path: "",
+  path: '',
   component: Module,
   children: [
     {
-      path: "",
+      path: '',
       component: Feed,
     },
     {
-      path: "topic/:id",
+      path: 'topic/:id',
       component: Topic,
     },
   ],

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ChevronLeftIcon } from "@heroicons/vue/24/outline";
-import { useRouter } from "vue-router";
+import { ChevronLeftIcon } from '@heroicons/vue/24/outline';
+import { useRouter } from 'vue-router';
 
 defineSlots<{
   default(props: any): any;

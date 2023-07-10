@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import DefaultLayout from "@/layouts/DefaultLayout.vue";
-import { Topic } from "@/lib/domain";
-import TopicList from "@/components/TopicList.vue";
+import DefaultLayout from '@/layouts/DefaultLayout.vue';
+import { Topic } from '@/lib/domain';
+import TopicList from '@/components/TopicList.vue';
 
 // TODO: Retrieve feed from server
 const topics: Topic[] = [
@@ -9,11 +9,11 @@ const topics: Topic[] = [
     id: 1,
     author: {
       id: 1,
-      username: "topicql",
+      username: 'topicql',
       avatarUrl:
-        "https://vectorseek.com/wp-content/uploads/2023/02/GraphQL-Logo-Vector.jpg",
+        'https://vectorseek.com/wp-content/uploads/2023/02/GraphQL-Logo-Vector.jpg',
     },
-    content: "Lorem ipsum",
+    content: 'Lorem ipsum',
     replies: [],
     createdAt: new Date(new Date().getTime() - 1000 * 60 * 10),
   },

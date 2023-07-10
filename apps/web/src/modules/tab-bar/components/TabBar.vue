@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import TabBarButton from "./TabBarButton.vue";
-import { tabLinks } from "../tab-links";
+import TabBarButton from './TabBarButton.vue';
+import { tabLinks } from '../tab-links';
 </script>
 
 <template>

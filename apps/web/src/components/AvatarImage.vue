@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { cn } from "@/lib/utils";
+import { computed } from 'vue';
+import { cn } from '@/lib/utils';
 
 const props = defineProps<{
   src?: string;
@@ -9,11 +9,11 @@ const props = defineProps<{
 }>();
 
 const fallbackName = computed(() =>
-  props.username.includes(" ")
+  props.username.includes(' ')
     ? props.username
-        .split(" ")
+        .split(' ')
         .map((name) => name[0])
-        .join("")
+        .join('')
         .toLocaleUpperCase()
     : props.username.slice(0, 2).toLocaleUpperCase()
 );

@@ -1,18 +1,18 @@
-import { RouteRecordRaw } from "vue-router";
+import { RouteRecordRaw } from 'vue-router';
 
-const Module = () => import("./ProfileModule.vue");
-const Profile = () => import("./pages/ProfilePage.vue");
+const Module = () => import('./ProfileModule.vue');
+const Profile = () => import('./pages/ProfilePage.vue');
 
 const moduleRoute: RouteRecordRaw = {
-  path: "/profile",
+  path: '/profile',
   component: Module,
   children: [
     {
-      path: "",
+      path: '',
       component: Profile,
     },
     {
-      path: ":id",
+      path: ':id',
       component: Profile,
     },
   ],

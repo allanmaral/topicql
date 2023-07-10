@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Topic } from "@/lib/domain";
-import TopicListItem from "./TopicListItem.vue";
-import { useRouter } from "vue-router";
+import { Topic } from '@/lib/domain';
+import TopicListItem from './TopicListItem.vue';
+import { useRouter } from 'vue-router';
 
 defineProps<{ topics: Topic[] }>();
 

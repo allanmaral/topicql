@@ -1,4 +1,4 @@
-import { UserAvatar } from "./user";
+import { UserAvatar } from './user';
 
 export interface Topic {
   id: number;

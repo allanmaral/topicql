@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { ChatBubbleOvalLeftIcon } from "@heroicons/vue/24/outline";
+import { ChatBubbleOvalLeftIcon } from '@heroicons/vue/24/outline';
 
 const emit = defineEmits<{
-  (event: "click"): void;
+  (event: 'click'): void;
 }>();
 
 function handleClick() {
-  emit("click");
+  emit('click');
 }
 </script>
 

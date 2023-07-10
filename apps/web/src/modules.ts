@@ -1,6 +1,6 @@
-import { Router } from "vue-router";
+import { Router } from 'vue-router';
 
-import { router } from "./routes";
+import { router } from './routes';
 
 type RegisterRoutesFn = (router: Router) => void;
 

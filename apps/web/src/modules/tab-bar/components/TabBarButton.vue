@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import { useRoute } from "vue-router";
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 
-import { cn } from "../../../lib/utils";
+import { cn } from '../../../lib/utils';
 
 const props = defineProps<{
   icon: any;

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { User } from "@/lib/domain";
-import AvatarImage from "@/components/AvatarImage.vue";
+import { User } from '@/lib/domain';
+import AvatarImage from '@/components/AvatarImage.vue';
 
 defineProps<{ user: User }>();
 </script>

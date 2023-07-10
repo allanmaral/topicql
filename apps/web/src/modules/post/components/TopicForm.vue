@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue';
 
-import { UserAvatar as User } from "@/lib/domain";
-import AvatarImage from "@/components/AvatarImage.vue";
-import UserAvatar from "@/components/UserAvatar.vue";
-import UserUsername from "@/components/UserUsername.vue";
+import { UserAvatar as User } from '@/lib/domain';
+import AvatarImage from '@/components/AvatarImage.vue';
+import UserAvatar from '@/components/UserAvatar.vue';
+import UserUsername from '@/components/UserUsername.vue';
 
 defineProps<{ user: User; reply?: boolean }>();
 const emit = defineEmits<{
-  (event: "submit", content: string): void;
+  (event: 'submit', content: string): void;
 }>();
 
-const content = ref("");
+const content = ref('');
 
 function handleSubmit() {
-  emit("submit", content.value);
+  emit('submit', content.value);
 }
 </script>
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import PageHeader from "@/components/PageHeader.vue";
+import PageHeader from '@/components/PageHeader.vue';
 
 defineSlots<{
   default(props: any): any;

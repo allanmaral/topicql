@@ -2,6 +2,8 @@
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 
+import { cn } from "../../../lib/utils";
+
 const props = defineProps<{
   icon: any;
   activeIcon: any;
@@ -14,9 +16,6 @@ const active = computed(() =>
   props.exact ? route.path === props.href : route.path.startsWith(props.href)
 );
 const icon = computed(() => (active.value ? props.activeIcon : props.icon));
-const iconClass = computed(() =>
-  active.value ? "text-purple-300" : "text-purple-300 opacity-60"
-);
 </script>
 
 <template>
@@ -24,7 +23,9 @@ const iconClass = computed(() =>
     <component
       :is="icon"
       class="h-6 w-6 transition-colors"
-      :class="iconClass"
+      :class="
+        cn('h-6 w-6 transition-colors text-primary', !active && 'opacity-60')
+      "
     ></component>
   </router-link>
 </template>

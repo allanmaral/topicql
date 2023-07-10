@@ -1,15 +1,20 @@
 import { RouteRecordRaw } from "vue-router";
 
 const Module = () => import("./PostModule.vue");
-const Post = () => import("./pages/PostPage.vue");
+const Create = () => import("./pages/CreateTopicPage.vue");
+const Reply = () => import("./pages/ReplyTopicPage.vue");
 
 const moduleRoute: RouteRecordRaw = {
-  path: "/post",
+  path: "/topic",
   component: Module,
   children: [
     {
-      path: "",
-      component: Post,
+      path: "create",
+      component: Create,
+    },
+    {
+      path: ":id/reply",
+      component: Reply,
     },
   ],
 };

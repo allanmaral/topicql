@@ -17,7 +17,7 @@ export const tabLinks = [
     activeIcon: HomeSolid,
   },
   {
-    href: "/post",
+    href: "/topic/create",
     icon: PencilOutline,
     activeIcon: PencilSolid,
   },

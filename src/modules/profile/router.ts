@@ -11,6 +11,10 @@ const moduleRoute: RouteRecordRaw = {
       path: "",
       component: Profile,
     },
+    {
+      path: ":id",
+      component: Profile,
+    },
   ],
 };
 

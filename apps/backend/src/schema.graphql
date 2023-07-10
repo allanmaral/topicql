@@ -1,0 +1,54 @@
+scalar Date
+
+input TopicInput {
+  content: String!
+  replyTo: ID
+}
+
+type Topic {
+  id: ID!
+  content: String!
+  createdAt: Date!
+  author: User
+  replies: [Topic!]!
+}
+
+type User {
+  id: ID!
+  username: String!
+  name: String!
+  bio: String!
+  avatarUrl: String!
+  topics: [Topic]!
+}
+
+input RegisterInput {
+  username: String!
+  name: String!
+  bio: String!
+  password: String!
+  avatarUrl: String!
+}
+
+input LoginInput {
+  username: String!
+  password: String!
+}
+
+type AuthPayload {
+  token: String
+}
+
+type Query {
+  feed: [Topic!]!
+  topic(id: ID!): Topic
+
+  user(id: ID!): User
+}
+
+type Mutation {
+  createTopic(topic: TopicInput!): Topic!
+
+  register(user: RegisterInput): AuthPayload
+  login(credentials: LoginInput): AuthPayload
+}

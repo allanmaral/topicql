@@ -19,6 +19,9 @@ importers:
       bcryptjs:
         specifier: ^2.4.3
         version: 2.4.3
+      date-fns:
+        specifier: ^2.30.0
+        version: 2.30.0
       graphql:
         specifier: ^16.0.1
         version: 16.0.1

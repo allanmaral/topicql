@@ -1,16 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import PhoneLayout from './layouts/PhoneLayout.vue';
+</script>
 
 <template>
-  <div
-    class="flex min-h-full flex-col items-center justify-center bg-slate-200"
-  >
-    <div
-      class="flex h-[52rem] w-96 flex-col overflow-hidden rounded-[2.5rem] border-4 border-slate-500 bg-background text-foreground shadow-2xl"
-    >
-      <router-view></router-view>
-    </div>
-    <div class="flex justify-center gap-4"></div>
-  </div>
+  <PhoneLayout>
+    <router-view></router-view>
+  </PhoneLayout>
 </template>
-
-<style scoped></style>

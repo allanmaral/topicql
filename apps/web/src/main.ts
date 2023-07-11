@@ -1,12 +1,12 @@
 import { createApp } from 'vue';
 
-import App from './App.vue';
+import { router } from './routes.ts';
 import { registerModules } from './modules';
 import { AuthModule } from './modules/auth';
-import { router } from './routes.ts';
+import { TabBarModule } from './modules/tab-bar';
+import App from './App.vue';
 
 import './assets/style/style.css';
-import { TabBarModule } from './modules/tab-bar/index.ts';
 
 const app = createApp(App);
 
@@ -16,4 +16,5 @@ registerModules({
 });
 
 app.use(router);
+
 app.mount('#app');

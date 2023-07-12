@@ -15,7 +15,7 @@ const emit = defineEmits<{
   (event: 'open', topic: Topic): void;
 }>();
 
-const hasReplies = computed(() => props.topic.replies.length > 0);
+const hasReplies = computed(() => props.topic.replies?.length > 0);
 
 function handleReply() {
   emit('reply', props.topic);

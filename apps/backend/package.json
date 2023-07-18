@@ -1,15 +1,16 @@
 {
-  "name": "graphql-social-app",
+  "name": "topicql-backend",
   "version": "0.0.1",
   "description": "",
   "private": true,
   "main": "dist/server.js",
   "scripts": {
-    "dev": "tsx ./src/server.ts",
+    "dev": "tsx ./src/server.ts --watch",
     "build": "tsup src",
     "start": "node dist/server.js",
-    "check:type": "tsc --noEmit",
-    "check:lint": "eslint \"src/**/*.ts\"",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "db:prepare": "npm run db:migrate && npm run db:seed",
     "db:migrate": "prisma db push && prisma generate",
     "db:seed": "tsx ./src/database/seed/index.ts",
     "db:reset": "tsx ./src/database/reset.ts"
@@ -20,27 +21,27 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/jsonwebtoken": "^8.5.6",
-    "@types/node": "^16.11.11",
+    "@types/node": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
-    "eslint": "^8.0.1",
-    "eslint-config-prettier": "^8.3.0",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-import-helpers": "^1.2.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.3.2",
-    "prisma": "^4.16.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8",
+    "prisma": "^5.0.0",
     "rimraf": "^3.0.2",
     "tsup": "^7.0.0",
     "tsx": "^3.12.7",
-    "typescript": "^4.5.2"
+    "typescript": "^5.0.2"
   },
   "dependencies": {
-    "@prisma/client": "^4.16.2",
-    "apollo-server": "^3.5.0",
+    "@apollo/server": "^4.7.5",
+    "@prisma/client": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "date-fns": "^2.30.0",
-    "graphql": "^16.0.1",
+    "graphql": "^16.7.1",
     "jsonwebtoken": "^8.5.1",
     "zod": "^3.11.6"
   }

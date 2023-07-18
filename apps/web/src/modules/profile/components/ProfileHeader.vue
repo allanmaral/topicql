@@ -12,7 +12,7 @@ defineProps<{ user: User }>();
         {{ user.name }}
       </div>
       <div class="text-sm font-light">
-        {{ user.username }}
+        {{ user.bio }}
       </div>
     </div>
     <div>

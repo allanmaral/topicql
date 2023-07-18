@@ -6,7 +6,7 @@ import AvatarImage from '@/components/AvatarImage.vue';
 import UserAvatar from '@/components/UserAvatar.vue';
 import UserUsername from '@/components/UserUsername.vue';
 
-defineProps<{ user: User; reply?: boolean }>();
+defineProps<{ user: Omit<User, 'bio' | 'name'>; reply?: boolean }>();
 const emit = defineEmits<{
   (event: 'submit', content: string): void;
 }>();
@@ -23,7 +23,7 @@ function handleSubmit() {
     <div class="flex flex-1 gap-2">
       <div class="flex flex-col items-center gap-2">
         <UserAvatar :user="user" :interactive="false" />
-        <div class="w-0 flex-1 border-l-2 border-timeline"></div>
+        <div class="border-timeline w-0 flex-1 border-l-2"></div>
         <AvatarImage
           :username="user.username"
           :src="user.avatarUrl"
@@ -39,7 +39,7 @@ function handleSubmit() {
         <div>
           <textarea
             v-model="content"
-            class="min-h-[5rem] w-full rounded bg-transparent outline-none focus-within:outline-1 focus-within:outline-timeline"
+            class="focus-within:outline-timeline min-h-[5rem] w-full rounded bg-transparent outline-none focus-within:outline-1"
             type="text"
             autofocus
             :placeholder="reply ? 'Responda...' : 'Comece um novo tópico...'"
@@ -51,7 +51,7 @@ function handleSubmit() {
     <div class="flex justify-end">
       <button
         type="submit"
-        class="flex h-11 cursor-pointer items-center justify-center px-2 font-semibold text-primary"
+        class="text-primary flex h-11 cursor-pointer items-center justify-center px-2 font-semibold"
       >
         Postar
       </button>

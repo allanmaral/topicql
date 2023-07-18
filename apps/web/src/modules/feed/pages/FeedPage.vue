@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import { Topic } from '@/lib/domain';
-import TopicList from '@/components/TopicList.vue';
+
+// TODO: Components
+// import TopicList from '@/components/TopicList.vue';
+// import LoadingIndicator from '@/components/LoadingIndicator.vue';
+// import ErrorMessage from '@/components/ErrorMessage.vue';
 
 // TODO: Retrieve feed from server
 const topics: Topic[] = [
@@ -25,7 +29,7 @@ const topics: Topic[] = [
     <template #title> TopicQL </template>
 
     <template #default>
-      <TopicList :topics="topics" />
+      <!-- TODO: List topics -->
     </template>
   </DefaultLayout>
 </template>

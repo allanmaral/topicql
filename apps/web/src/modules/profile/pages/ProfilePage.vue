@@ -24,7 +24,7 @@ const profile: { user: User; topics: Topic[] } = {
     id: 1,
     username: 'topicql',
     name: 'TopicQL',
-    bio: 'Alguns dizem que eu sou um clone',
+    bio: 'A GraphQL study',
     avatarUrl:
       'https://vectorseek.com/wp-content/uploads/2023/02/GraphQL-Logo-Vector.jpg',
   },

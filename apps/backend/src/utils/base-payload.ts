@@ -39,6 +39,8 @@ export function createValidationErrors<T>(
 
   Object.keys(flatError.fieldErrors).forEach((field) => {
     userErrors.push(
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       createValidationError(field, flatError.fieldErrors[field].join('\n'))
     );
   });

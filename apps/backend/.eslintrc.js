@@ -28,7 +28,7 @@ module.exports = {
       },
     ],
     'import-helpers/order-imports': [
-      'warn',
+      'error',
       {
         newlinesBetween: 'always',
         groups: ['module', ['parent', 'sibling', 'index']],

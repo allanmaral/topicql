@@ -1,15 +1,21 @@
+import { ApolloServer } from '@apollo/server';
+import { startStandaloneServer } from '@apollo/server/standalone';
 import { PrismaClient } from '@prisma/client';
-import { ApolloServer } from 'apollo-server';
 
 import { resolvers } from './resolvers';
 import { typeDefs } from './type-defs';
+import { Context } from './utils';
 
 const prisma = new PrismaClient();
 
-const server = new ApolloServer({
+const server = new ApolloServer<Context>({
   typeDefs,
   resolvers,
-  context: ({ req }) => {
+});
+
+startStandaloneServer(server, {
+  listen: { port: 4000 },
+  context: async ({ req }) => {
     const token = req.headers.authorization;
 
     let userId: number | undefined = 1;
@@ -26,8 +32,6 @@ const server = new ApolloServer({
       userId,
     };
   },
-});
-
-server.listen().then(({ url }) => {
+}).then(({ url }) => {
   console.log(`Server is ready at ${url}`);
 });

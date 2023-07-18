@@ -12,7 +12,7 @@ const server = new ApolloServer({
   context: ({ req }) => {
     const token = req.headers.authorization;
 
-    let userId: number | undefined = undefined;
+    let userId: number | undefined = 1;
     if (token) {
       const base64Payload = token.split('.')[1] ?? '';
       const tokenPayload = JSON.parse(

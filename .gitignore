@@ -25,3 +25,5 @@ dist-ssr
 
 # Secret files
 .env
+
+apps/backend/prisma/dev.db

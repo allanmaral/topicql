@@ -15,8 +15,17 @@ export interface UserAvatar {
 const USER_KEY = 'user';
 
 export function getCurrentUser(): User {
-  const userData = localStorage.getItem(USER_KEY) ?? '{ "id": 1 }';
-  return JSON.parse(userData);
+  const savedUser = localStorage.getItem(USER_KEY);
+  return savedUser
+    ? JSON.parse(savedUser)
+    : {
+        id: 1,
+        username: 'topicql',
+        avatarUrl:
+          'https://vectorseek.com/wp-content/uploads/2023/02/GraphQL-Logo-Vector.jpg',
+        bio: 'A GraphQL study',
+        name: 'TopicQL',
+      };
 }
 
 export function setCurrentUser(user: User) {

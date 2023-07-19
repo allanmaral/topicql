@@ -1,14 +1,9 @@
 <script setup lang="ts">
+import { getCurrentUser } from '@/lib/domain';
 import DetailLayout from '@/layouts/DetailLayout.vue';
 import TopicForm from '../components/TopicForm.vue';
 
-// TODO: Load current user
-const currentUser = {
-  id: 1,
-  username: 'topicql',
-  avatarUrl:
-    'https://vectorseek.com/wp-content/uploads/2023/02/GraphQL-Logo-Vector.jpg',
-};
+const currentUser = getCurrentUser();
 
 // TODO: Reply a topic
 function handleSubmit(content: string) {

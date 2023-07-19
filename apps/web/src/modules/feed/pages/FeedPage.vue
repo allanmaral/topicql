@@ -19,6 +19,13 @@ const { data, fetching, error } = useQuery({
           username
           avatarUrl
         }
+        replies {
+          author {
+            id
+            username
+            avatarUrl
+          }
+        }
       }
     }
   `,

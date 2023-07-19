@@ -6,6 +6,7 @@ import { TabBarModule } from './modules/tab-bar';
 import App from './App.vue';
 
 import './assets/style/style.css';
+import { graphql } from './lib/graphql/client.ts';
 
 const app = createApp(App);
 
@@ -14,5 +15,6 @@ registerModules({
 });
 
 app.use(router);
+app.use(graphql);
 
 app.mount('#app');

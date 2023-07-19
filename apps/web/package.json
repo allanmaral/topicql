@@ -12,9 +12,11 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
+    "@urql/vue": "^1.1.2",
     "class-variance-authority": "^0.6.1",
     "clsx": "^1.2.1",
     "date-fns": "^2.30.0",
+    "graphql": "^16.7.1",
     "tailwind-merge": "^1.13.2",
     "vue": "3.3.4",
     "vue-router": "4.2.2"

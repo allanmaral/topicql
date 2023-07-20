@@ -27,3 +27,5 @@ dist-ssr
 .env
 
 apps/backend/prisma/dev.db
+
+apps/web/src/gql/*

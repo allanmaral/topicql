@@ -8,7 +8,9 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .js,.vue,.ts",
-    "lint:fix": "eslint . --ext .js,.vue,.ts --fix"
+    "lint:fix": "eslint . --ext .js,.vue,.ts --fix",
+    "codegen": "graphql-codegen",
+    "codegen:watch": "graphql-codegen --watch"
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",

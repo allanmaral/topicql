@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Topic } from '@/lib/domain';
+import { FeedTopic } from '@/lib/domain';
 import TopicList from '@/components/TopicList.vue';
 
-defineProps<{ topics: Topic[] }>();
+defineProps<{ topics: FeedTopic[] }>();
 </script>
 
 <template>

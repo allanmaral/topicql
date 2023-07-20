@@ -19,7 +19,7 @@ type User {
   name: String!
   bio: String!
   avatarUrl: String!
-  topics: [Topic]!
+  topics: [Topic!]!
 }
 
 input RegisterInput {

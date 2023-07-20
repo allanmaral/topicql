@@ -1,5 +1,7 @@
+import { ID } from './identifier';
+
 export interface User {
-  id: number;
+  id: ID;
   name: string;
   bio: string;
   username: string;
@@ -7,7 +9,7 @@ export interface User {
 }
 
 export interface UserAvatar {
-  id: number;
+  id: ID;
   username: string;
   avatarUrl: string;
 }

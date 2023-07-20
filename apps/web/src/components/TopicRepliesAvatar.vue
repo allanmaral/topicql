@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-import { Topic } from '@/lib/domain';
+import { FeedTopicReply } from '@/lib/domain';
 import { cn } from '@/lib/utils';
 import AvatarImage from '@/components/AvatarImage.vue';
 
-const props = defineProps<{ replies: Topic[] }>();
+const props = withDefaults(defineProps<{ replies?: FeedTopicReply[] }>(), {
+  replies: () => [],
+});
+
 const positioningByLength: Record<number, string[]> = {
   1: ['left-2 top-2'],
   2: ['left-4 top-1', 'left-0.5 top-5'],
@@ -15,7 +18,7 @@ const sizeByIndex = ['w-5 h-5', 'w-4 h-4', 'w-3 h-3'];
 
 const avatars = computed(() =>
   props.replies.slice(0, 3).map((reply, index, replies) => ({
-    id: reply.id,
+    id: reply.author.username,
     author: reply.author,
     positioning: positioningByLength[replies.length][index],
     size: sizeByIndex[index],

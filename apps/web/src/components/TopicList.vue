@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { Topic } from '@/lib/domain';
+import { FeedTopic } from '@/lib/domain';
 import TopicListItem from './TopicListItem.vue';
 import { useRouter } from 'vue-router';
 
-defineProps<{ topics: Topic[] }>();
+withDefaults(defineProps<{ topics?: FeedTopic[] }>(), { topics: () => [] });
 
 const router = useRouter();
 
-function handleOpen(topic: Topic) {
+function handleOpen(topic: FeedTopic) {
   router.push(`/topic/${topic.id}`);
 }
 
-function handleReply(topic: Topic) {
+function handleReply(topic: FeedTopic) {
   router.push(`/topic/${topic.id}/reply`);
 }
 </script>

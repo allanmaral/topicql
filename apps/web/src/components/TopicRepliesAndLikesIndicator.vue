@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { Topic } from '@/lib/domain';
+import { FeedTopic } from '@/lib/domain';
 
-defineProps<{ topic: Topic }>();
+defineProps<{ topic: FeedTopic }>();
 </script>
 
 <template>
   <div class="text-muted">
-    {{ topic.replies.length }}
-    {{ topic.replies.length !== 1 ? 'respostas' : 'resposta' }}
+    {{ topic.replies?.length }}
+    {{ topic.replies?.length !== 1 ? 'respostas' : 'resposta' }}
   </div>
 </template>

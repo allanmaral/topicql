@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-import { Topic } from '@/lib/domain';
+import { FeedTopic } from '@/lib/domain';
 import { formatDistanceToNow } from '@/lib/utils';
 import TopicRepliesAvatar from './TopicRepliesAvatar.vue';
 import TopicRepliesAndLikesIndicator from './TopicRepliesAndLikesIndicator.vue';
@@ -9,13 +9,15 @@ import TopicReplyButton from './TopicReplyButton.vue';
 import UserAvatar from './UserAvatar.vue';
 import UserUsername from './UserUsername.vue';
 
-const props = defineProps<{ topic: Topic; hideReplies?: boolean }>();
+const props = defineProps<{ topic: FeedTopic; hideReplies?: boolean }>();
 const emit = defineEmits<{
-  (event: 'reply', topic: Topic): void;
-  (event: 'open', topic: Topic): void;
+  (event: 'reply', topic: FeedTopic): void;
+  (event: 'open', topic: FeedTopic): void;
 }>();
 
-const hasReplies = computed(() => props.topic.replies?.length > 0);
+const hasReplies = computed(
+  () => props.topic.replies && props.topic.replies.length > 0
+);
 
 function handleReply() {
   emit('reply', props.topic);

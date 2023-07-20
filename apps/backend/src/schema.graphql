@@ -9,7 +9,7 @@ type Topic {
   id: ID!
   content: String!
   createdAt: Date!
-  author: User
+  author: User!
   replies: [Topic!]!
 }
 

@@ -1,36 +1,56 @@
 <script setup lang="ts">
-import { Topic } from '@/lib/domain';
+import { useRoute } from 'vue-router';
+import { useQuery } from '@urql/vue';
+import { computed } from 'vue';
+
+import { graphql } from '@/gql';
 import DetailLayout from '@/layouts/DetailLayout.vue';
 import TopicListItem from '@/components/TopicListItem.vue';
 import TopicList from '@/components/TopicList.vue';
+import LoadingIndicator from '@/components/LoadingIndicator.vue';
+import ErrorMessage from '@/components/ErrorMessage.vue';
 
-// TODO: Load topic details
-const topic: Topic = {
-  id: 1,
-  author: {
-    id: 1,
-    username: 'topicql',
-    avatarUrl:
-      'https://vectorseek.com/wp-content/uploads/2023/02/GraphQL-Logo-Vector.jpg',
+const topicQueryDocument = graphql(/* GraphQL */ `
+  query Topic($topicId: ID!) {
+    topic(id: $topicId) {
+      id
+      content
+      createdAt
+      author {
+        id
+        username
+        avatarUrl
+      }
+      replies {
+        id
+        content
+        createdAt
+        author {
+          id
+          username
+          avatarUrl
+        }
+        replies {
+          author {
+            id
+            username
+            avatarUrl
+          }
+        }
+      }
+    }
+  }
+`);
+
+const route = useRoute();
+const { data, fetching, error } = useQuery({
+  query: topicQueryDocument,
+  variables: {
+    topicId: <string>route.params['id'],
   },
-  content:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consectetur.',
-  createdAt: new Date(new Date().getTime() - 1000 * 60 * 10),
-  replies: [
-    {
-      id: 2,
-      author: {
-        id: 2,
-        username: 'threads',
-        avatarUrl:
-          'https://seeklogo.com/images/T/threads-logo-9F3F8228AC-seeklogo.com.png?v=638243212870000000',
-      },
-      content: 'Ut ante sapien, placerat nec.',
-      createdAt: new Date(new Date().getTime() - 1000 * 60 * 5),
-      replies: [],
-    },
-  ],
-};
+});
+
+const topic = computed(() => data.value?.topic);
 </script>
 
 <template>
@@ -38,8 +58,16 @@ const topic: Topic = {
     <template #title> Tópico </template>
 
     <template #default>
-      <TopicListItem :topic="topic"></TopicListItem>
-      <TopicList :topics="topic.replies" />
+      <template v-if="fetching">
+        <LoadingIndicator />
+      </template>
+      <template v-else-if="error">
+        <ErrorMessage />
+      </template>
+      <template v-else-if="topic">
+        <TopicListItem :topic="topic"></TopicListItem>
+        <TopicList :topics="topic.replies" />
+      </template>
     </template>
   </DetailLayout>
 </template>

@@ -51,6 +51,22 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--foreground)) hsl(var(--background));
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--foreground));
+    border-radius: 6px;
   }
 }
